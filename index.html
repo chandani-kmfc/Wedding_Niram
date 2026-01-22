@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Wedding Invitation</title>
+
+<!-- GSAP -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<!-- FULL PAGE ENVELOPE -->
+<div id="envelope-screen">
+  <div class="envelope">
+    <div class="flap"></div>
+
+    <div class="letter">
+      <h2>You’re Invited</h2>
+      <p>Amit ❤️ Priya</p>
+    </div>
+
+    <button class="seal">Open</button>
+  </div>
+</div>
+
+<!-- MAIN WEBSITE (HIDDEN INITIALLY) -->
+<div id="website">
+
+  <section class="section hero">
+    <h1>Amit & Priya</h1>
+    <p>12 March 2026</p>
+  </section>
+
+  <section class="section couple">
+    <h2>The Couple</h2>
+    <p>Two hearts. One story.</p>
+  </section>
+
+  <section class="section events">
+    <h2>Wedding Events</h2>
+    <div class="event-card">💍 Wedding – 7 PM</div>
+    <div class="event-card">🎉 Reception – 8 PM</div>
+  </section>
+
+  <section class="section venue">
+    <h2>Venue</h2>
+    <p>Royal Palace, Jaipur</p>
+  </section>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
