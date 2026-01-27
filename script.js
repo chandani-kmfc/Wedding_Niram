@@ -22,7 +22,7 @@ tl
   .to(letter, {
     y: -40,
     opacity: 1,
-    duration: 0.8,
+    duration: 3,
     ease: "power3.out"
   })
   .to(envelopeScreen, {
@@ -42,16 +42,36 @@ seal.addEventListener("click", () => {
   tl.play();
 });
 
-/* OPTIONAL: section reveal */
-gsap.utils.toArray(".section").forEach(section => {
-  gsap.from(section.children, {
-    scrollTrigger: {
-      trigger: section,
-      start: "top 75%"
-    },
-    opacity: 0,
-    y: 40,
-    stagger: 0.2,
-    duration: 1
-  });
-});
+const sections = gsap.utils.toArray(".section");
+    const vh = window.innerHeight;
+
+    // Initial state: first card visible, others below viewport
+    gsap.set(sections, {
+        y: (i) => (i === 0 ? 0 : vh + 100),
+        scale: 1,
+        zIndex: (i) => i,
+        autoAlpha: 1
+    });
+
+    const tl1 = gsap.timeline({
+        scrollTrigger: {
+            trigger: "#website",
+            start: "top top",
+            end: `+=${(sections.length - 1) * 100}%`,
+            pin: true,
+            scrub: 2,
+            // markers: true
+        }
+    });
+
+    // Each next card slides up and covers the previous one
+    sections.forEach((section, i) => {
+        if (i === 0) return; // first card already visible
+
+        tl1.to(section, {
+            y: 0,
+            duration: 1,
+            ease: "power2.out"
+        });
+    });
+    // TODO: Added animation for texts
