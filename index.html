@@ -8,13 +8,13 @@
     <!-- GSAP -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.1/dist/SplitText.min.js"></script>
+
+    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com" rel="preconnect">
     <link crossorigin href="https://fonts.gstatic.com" rel="preconnect">
-    <link href="https://fonts.googleapis.com/css2?family=Monsieur+La+Doulaise&family=Ms+Madi&display=swap"
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Dancing+Script:wght@400;700&family=Cormorant+Garamond:wght@300;400;600&display=swap"
           rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Great+Vibes&display=swap"
-          rel="stylesheet">
+
     <link href="style.css" rel="stylesheet"/>
 </head>
 <body>
@@ -25,8 +25,9 @@
         <div class="flap"></div>
 
         <div class="letter">
-            <h2>You’re Invited</h2>
-            <p>Niraj ❤️ Foram</p>
+            <h2>You're Invited</h2>
+            <p class="names">Niraj ❤️ Foram</p>
+            <p class="date-line">Join us as we unite our hearts forever</p>
         </div>
 
         <button class="seal">Open</button>
@@ -39,34 +40,172 @@
 
 
         <section class="section hero">
-            <h2>Niraj & Foram</h2>
-            <div class="content">
-                <p>12 March 2026</p>
+            <div class="hero-content">
+                <h1>Niraj & Foram</h1>
+                <p class="subtitle">Together forever, starting</p>
+                <p class="wedding-date">10th February 2026</p>
+
+                <div class="countdown-container">
+                    <div class="countdown-title">Counting down to our forever</div>
+                    <div class="countdown">
+                        <div class="countdown-item">
+                            <span class="countdown-number" id="days">00</span>
+                            <span class="countdown-label">Days</span>
+                        </div>
+                        <div class="countdown-item">
+                            <span class="countdown-number" id="hours">00</span>
+                            <span class="countdown-label">Hours</span>
+                        </div>
+                        <div class="countdown-item">
+                            <span class="countdown-number" id="minutes">00</span>
+                            <span class="countdown-label">Minutes</span>
+                        </div>
+                        <div class="countdown-item">
+                            <span class="countdown-number" id="seconds">00</span>
+                            <span class="countdown-label">Seconds</span>
+                        </div>
+                    </div>
+                    <p class="romantic-line">Every love story is beautiful, but ours is my favorite</p>
+                </div>
             </div>
         </section>
 
         <section class="section couple">
-            <h2>The Couple</h2>
-            <div class="content">
+            <div class="couple-container">
+                <div class="couple-photo">
+                    <img alt="Niraj & Foram"
+                         class="couple-image" src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80">
+                    <div class="photo-caption">Our journey together</div>
+                </div>
 
-                <p>Two hearts. One story.</p>
+                <div class="couple-story">
+                    <h2>Our Love Story</h2>
+                    <p class="romantic-quote">"In you, I've found the love of my life and my closest, truest
+                        friend."</p>
+
+                    <div class="story-content">
+                        <p>From the moment our eyes met, we knew there was something special. What started as a chance
+                            encounter blossomed into a beautiful journey of love, laughter, and countless memories.</p>
+
+                        <p>Niraj, with his unwavering support and gentle heart, showed me what true love means. Foram,
+                            with her radiant smile and kind soul, brought light into every moment we shared.</p>
+
+                        <p>Through every season, every challenge, and every joy, we grew together - learning, loving,
+                            and building a foundation that would last a lifetime.</p>
+
+                        <p>On February 10th, 2026, we will officially begin our forever, surrounded by the love of
+                            family and friends who have supported us on this beautiful journey.</p>
+                    </div>
+
+                    <div class="love-quote">
+                        <p>"A successful marriage requires falling in love many times, always with the same person."</p>
+                        <p class="quote-author">- Mignon McLaughlin</p>
+                    </div>
+                </div>
             </div>
         </section>
 
         <section class="section events">
-            <h2>Wedding Events</h2>
-            <div class="content">
+            <div class="timeline-container">
+                <h2>Our Wedding Day Timeline</h2>
+                <p class="romantic-quote">"Love is not about how many days, months, or years you have been together.
+                    Love is about how much you love each other every single day."</p>
 
-                <div class="event-card">💍 Wedding – 7 PM</div>
-                <div class="event-card">🎉 Reception – 8 PM</div>
+                <div class="timeline">
+                    <div class="timeline-event left">
+                        <div class="timeline-content">
+                            <div class="timeline-time">3:00 PM</div>
+                            <div class="timeline-icon">👰</div>
+                            <h3>Bridal Preparation</h3>
+                            <p>The bride gets ready with her bridesmaids and family</p>
+                            <div class="timeline-location">Bridal Suite</div>
+                        </div>
+                    </div>
+
+                    <div class="timeline-event right">
+                        <div class="timeline-content">
+                            <div class="timeline-time">3:30 PM</div>
+                            <div class="timeline-icon">🤵</div>
+                            <h3>Groom Preparation</h3>
+                            <p>The groom prepares with his groomsmen and family</p>
+                            <div class="timeline-location">Groom's Suite</div>
+                        </div>
+                    </div>
+
+                    <div class="timeline-event left">
+                        <div class="timeline-content">
+                            <div class="timeline-time">4:00 PM</div>
+                            <div class="timeline-icon">💒</div>
+                            <h3>Wedding Ceremony</h3>
+                            <p>Exchange of vows and rings in a traditional ceremony</p>
+                            <div class="timeline-location">Main Hall</div>
+                        </div>
+                    </div>
+
+                    <div class="timeline-event right">
+                        <div class="timeline-content">
+                            <div class="timeline-time">5:30 PM</div>
+                            <div class="timeline-icon">📸</div>
+                            <h3>Photography Session</h3>
+                            <p>Family photos and couple portraits</p>
+                            <div class="timeline-location">Palace Gardens</div>
+                        </div>
+                    </div>
+
+                    <div class="timeline-event left">
+                        <div class="timeline-content">
+                            <div class="timeline-time">7:00 PM</div>
+                            <div class="timeline-icon">🎉</div>
+                            <h3>Cocktail Reception</h3>
+                            <p>Welcome drinks and appetizers</p>
+                            <div class="timeline-location">Outdoor Terrace</div>
+                        </div>
+                    </div>
+
+                    <div class="timeline-event right">
+                        <div class="timeline-content">
+                            <div class="timeline-time">8:00 PM</div>
+                            <div class="timeline-icon">🍽️</div>
+                            <h3>Wedding Dinner</h3>
+                            <p>Multi-course gourmet dinner</p>
+                            <div class="timeline-location">Grand Ballroom</div>
+                        </div>
+                    </div>
+
+                    <div class="timeline-event left">
+                        <div class="timeline-content">
+                            <div class="timeline-time">9:30 PM</div>
+                            <div class="timeline-icon">💃</div>
+                            <h3>First Dance & Party</h3>
+                            <p>Dancing, music, and celebrations</p>
+                            <div class="timeline-location">Dance Floor</div>
+                        </div>
+                    </div>
+
+                    <div class="timeline-event right">
+                        <div class="timeline-content">
+                            <div class="timeline-time">12:00 AM</div>
+                            <div class="timeline-icon">🎆</div>
+                            <h3>Grand Finale</h3>
+                            <p>Fireworks display and farewell</p>
+                            <div class="timeline-location">Palace Courtyard</div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
 
         <section class="section venue">
-            <h2>Venue</h2>
-            <div class="content">
-
-                <p>Royal Palace, Jaipur</p>
+            <div class="section-content">
+                <h2>Where Dreams Unite</h2>
+                <p class="romantic-quote">"The best thing to hold onto in life is each other."</p>
+                <div class="venue-info">
+                    <h3>Royal Palace, Jaipur</h3>
+                    <p>10th February 2026</p>
+                    <p>4:00 PM onwards</p>
+                    <p class="address">123 Palace Road, Jaipur, Rajasthan</p>
+                </div>
+                <p class="final-note">We can't wait to celebrate with you!</p>
             </div>
         </section>
     </div>

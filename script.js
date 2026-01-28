@@ -1,4 +1,4 @@
-gsap.registerPlugin(ScrollTrigger, SplitText);
+gsap.registerPlugin(ScrollTrigger);
 
 const seal = document.querySelector(".seal");
 const flap = document.querySelector(".flap");
@@ -42,6 +42,38 @@ seal.addEventListener("click", () => {
     tl.play();
 });
 
+// Countdown Timer
+function updateCountdown() {
+    const weddingDate = new Date('February 10, 2026 16:00:00').getTime();
+    const now = new Date().getTime();
+    const timeLeft = weddingDate - now;
+
+    if (timeLeft > 0) {
+        const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+
+        document.getElementById('days').textContent = days.toString().padStart(2, '0');
+        document.getElementById('hours').textContent = hours.toString().padStart(2, '0');
+        document.getElementById('minutes').textContent = minutes.toString().padStart(2, '0');
+        document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
+
+        // Add subtle animation to countdown numbers
+        gsap.fromTo('.countdown-number',
+            {scale: 1},
+            {scale: 1.1, duration: 0.3, ease: "power2.out", yoyo: true, repeat: 1}
+        );
+    } else {
+        document.querySelector('.countdown').innerHTML = '<div class="countdown-ended">🎉 We\'re married! 🎉</div>';
+    }
+}
+
+// Initialize countdown
+updateCountdown();
+setInterval(updateCountdown, 1000);
+
+// Scroll animations
 const sections = gsap.utils.toArray(".section");
 const vh = window.innerHeight;
 
@@ -60,41 +92,71 @@ const tl1 = gsap.timeline({
         end: `+=${(sections.length - 1) * 100}%`,
         pin: true,
         scrub: 2,
-        // markers: true
     }
 });
 
 // Each next card slides up and covers the previous one
 sections.forEach((section, i) => {
-    const heading = section.querySelector("h2");
-    const content = section.querySelector(".content");
+    if (i === 0) return;
 
-    if (!heading) return;
+    tl1.to(section, {
+        y: 0,
+        duration: 1,
+        ease: "power2.out"
+    });
+});
 
-    const split = new SplitText(heading, {type: "chars"});
-
-    if (i !== 0) {
-        tl1.to(section, {
-            y: 0,
-            duration: 1,
-            ease: "power2.out"
+// Add text animations for each section
+sections.forEach((section, i) => {
+    const content = section.querySelector('.section-content') || section.querySelector('.hero-content');
+    if (content) {
+        gsap.from(content.children, {
+            scrollTrigger: {
+                trigger: section,
+                start: "top center",
+                end: "bottom center",
+                scrub: 1
+            },
+            y: 50,
+            opacity: 0,
+            stagger: 0.2,
+            duration: 1
         });
+    }
+});
 
-        tl1.from(split.chars, {
-            y: 80,
-            autoAlpha: 0,
-            stagger: 0.04,
-            duration: 0.6,
-            ease: "power3.out"
-        }, "<0.2");
+// Add animation for timeline items
+const timelineEvents = document.querySelectorAll('.timeline-event');
+timelineEvents.forEach((event, index) => {
+    gsap.fromTo(event,
+        {
+            opacity: 0,
+            y: 30
+        },
+        {
+            opacity: 1,
+            y: 0,
+            duration: 0.8,
+            delay: index * 0.15,
+            ease: "power2.out",
+            scrollTrigger: {
+                trigger: event,
+                start: "top 90%",
+                toggleActions: "play none none reverse"
+            }
+        }
+    );
+});
 
-        if (content) {
-            tl1.from(content, {
-                x: -60,
-                autoAlpha: 0,
-                duration: 0.6,
-                ease: "power2.out"
-            }, "<0.5");
+// Auto-scroll timeline to top when section becomes active
+ScrollTrigger.create({
+    trigger: ".events",
+    start: "top center",
+    onEnter: () => {
+        // Scroll to the top of the timeline section
+        const eventsSection = document.querySelector('.events');
+        if (eventsSection) {
+            eventsSection.scrollTop = 0;
         }
     }
 });
