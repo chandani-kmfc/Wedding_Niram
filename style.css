@@ -162,13 +162,16 @@ body {
 }
 
 /* TODO: Change the font style */
-h2 {
+h2 > * {
     font-family: 'Great Vibes', cursive;
+    font-weight: 700;
+    font-size: 3rem;
+    font-style: italic;
 }
 
 p {
     font-family: "Ms Madi", cursive;
-    font-weight: 700;
+    font-weight: 500;
     font-size: 1.5rem;
     font-style: normal;
 }
