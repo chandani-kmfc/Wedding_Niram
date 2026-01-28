@@ -132,9 +132,7 @@ body {
 
 
 .hero {
-    background-color: #D6A99D;
-    background-image: url("./public/yhwach-bleach-5k-3840x2160-19886.jpg");
-    background-size: cover;
+    background: linear-gradient(135deg, rgb(245, 232, 255) 0%, rgb(224, 200, 247) 100%);
 }
 
 .couple {
@@ -157,7 +155,6 @@ body {
     border-radius: 10px;
 }
 
-/* TODO: Change the font style */
 h2, h2 > * {
     font-family: 'Great Vibes', cursive;
     font-weight: 700;
@@ -170,4 +167,35 @@ p {
     font-weight: 500;
     font-size: 1.5rem;
     font-style: normal;
+}
+
+.countdown-container, .countdown-item, .countdown-number {
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 15px 35px;
+    border-radius: 5%
+}
+
+.countdown-container {
+    margin-left: 8vw;
+    margin-right: 8vw;
+    padding: 4vw;
+}
+
+.countdown {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+.countdown-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.countdown-number {
+    font-size: 3rem;
+    font-weight: bold;
+    width: 25vw;
+    text-align: center;
 }

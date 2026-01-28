@@ -22,7 +22,7 @@ tl
     .to(letter, {
         y: -40,
         opacity: 1,
-        duration: 3,
+        duration: 1.5,
         ease: "power3.out"
     })
     .to(envelopeScreen, {
