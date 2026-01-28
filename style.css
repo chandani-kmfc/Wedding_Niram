@@ -139,6 +139,8 @@ body {
 
 .hero {
     background-color: #D6A99D;
+    background-image: url("./public/yhwach-bleach-5k-3840x2160-19886.jpg");
+    background-size: cover;
 }
 
 .couple {
@@ -162,7 +164,7 @@ body {
 }
 
 /* TODO: Change the font style */
-h2 > * {
+h2, h2 > * {
     font-family: 'Great Vibes', cursive;
     font-weight: 700;
     font-size: 3rem;
